@@ -4,12 +4,11 @@ pipeline {
         APP_ENV = "staging"
     }
     options{
-        timeout(time: 1, unit: 'SECONDS')
+        timeout(time: 20, unit: 'MINUTES')
     }
     stages {
         stage('Hello') {
             steps {
-                sleep time: 5, unit: 'SECONDS'
                 echo "build number: ${env.BUILD_NUMBER}"
                 echo 'Hello World'
                 echo "${APP_ENV}"
