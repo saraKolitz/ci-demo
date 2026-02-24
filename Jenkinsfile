@@ -5,6 +5,7 @@ pipeline {
     }
     options{
         timeout(time: 20, unit: 'MINUTES')
+        buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     stages {
         stage('connect to github'){
