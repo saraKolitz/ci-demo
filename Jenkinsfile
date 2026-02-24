@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
                 echo "build number: ${env.BUILD_NUMBER}"
+                echo 'Hello World'
                 echo "${APP_ENV}"
             }
         }
