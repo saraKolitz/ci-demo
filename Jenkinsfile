@@ -3,6 +3,9 @@ pipeline {
     environment{
         APP_ENV = "staging"
     }
+    options{
+        timeout(time: 1, unit: 'SECONDS')
+    }
     stages {
         stage('Hello') {
             steps {
