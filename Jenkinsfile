@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'build'
                 echo 'The second step'
-                echo $"{APP_ENV}"
+                echo "${APP_ENV}"
             }
         }
         stage('test') {
