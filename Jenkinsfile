@@ -7,6 +7,17 @@ pipeline {
         timeout(time: 20, unit: 'MINUTES')
     }
     stages {
+        stage('connect to github'){
+           steps{
+            withCredentials([
+    		  usernamePassword(credentialsId: 'GitHubUser', usernameVariable: 'USER', passwordVariable: 'PASS'),
+    		]) {
+    		  bat '''
+    			echo  Deploying as %USER% %PASS%
+    		  '''
+    		}
+        }
+        }
         stage('Hello') {
             steps {
                 echo "build number: ${env.BUILD_NUMBER}"
